@@ -62,7 +62,8 @@ namespace sweetbakery.Controllers
                 .Where(x => x.Id != receta.Id)
                 .ToList()/*lo convierte a lista para poder usarlo*/
                 .OrderBy(x => r.Next())
-                .Take(3);/*coleccion de recetas MENOS la que se encontro en receta */
+                .Take(3)/*coleccion de recetas MENOS la que se encontro en receta */
+                .Select(x => new Recetas { Id=x.Id, Nombre=x.Nombre });/*se gtrae solo el id y el nombre*/
 
             if (masRecetas==null)
             {
