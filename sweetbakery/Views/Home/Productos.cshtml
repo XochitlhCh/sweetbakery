@@ -1,0 +1,30 @@
+﻿@model IEnumerable<sweetbakery.Models.Categorias>
+
+@{
+    Layout = "_Layout";
+}
+
+
+
+
+@foreach (var cat in Model)
+{
+    <section class="TipoP">
+        <h2>@cat.Nombre</h2>
+
+        @foreach (var p in cat.Productos)
+        {
+
+            <div class="foto">
+                <img src="~/imagenes/productos/@(p.Id).png" />
+                <div class="info">
+                    <h5>@p.Nombre</h5>
+                    <p>@p.Descripcion</p>
+                </div>
+            </div>
+        }
+    </section>
+}
+
+
+

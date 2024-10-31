@@ -1,0 +1,32 @@
+﻿@model IEnumerable<sweetbakery.Models.Categorias>
+
+@{
+    Layout = "_Layout";
+}
+
+
+
+
+@foreach (var cat in Model)
+{
+    <section class="contenedor">
+        <h2>@cat.Nombre</h2>
+
+        @foreach (var rec in cat.Recetas)
+        {
+            <div>
+                <div>
+                    <img src="~/imagenes/recetas/@(rec.Id).png" />
+                </div>
+                <a href="~/receta/@rec.Nombre.Replace(" ", "-")">
+                    <h2>@rec.Nombre</h2>
+                </a>
+                <p>@rec.Descripcion</p>
+            </div>
+        }
+
+    </section>
+
+}
+
+

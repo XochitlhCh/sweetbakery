@@ -1,0 +1,51 @@
+﻿@model sweetbakery.Models.ViewModels.RecetaViewModel
+
+@{
+
+    Layout = "_Layout";
+}
+
+
+
+<main>
+
+
+    <section id="receta">
+        <h1 id="nombre">@Model.Receta.Nombre</h1>
+        <img src="~/imagenes/recetas/@(Model.Receta.Id).png" id="imagen" />
+
+        <p id="resena">@Model.Receta.Reseña</p>
+
+        <div>
+            <h3>Ingredientes</h3>
+            <p id="ingredientes">
+               
+                    @Html.Raw(Model.Receta.Ingredientes.Replace("\n", "<br/>"));
+            </p>
+        </div>
+        <div>
+            <h3>Procedimiento</h3>
+            <p id="procedimiento">@Html.Raw(@Model.Receta.Procedimiento.Replace("\n", "<br/>"));</p>
+        </div>
+    </section>
+
+
+    <aside>
+        <h2>Más Recetas</h2>
+
+
+        @foreach (var lis in Model.ListaRecetas)
+        {
+            <a href="~/receta/@lis.Nombre.Replace(" ", "-")">
+                <div>
+                    <img src="~/imagenes/recetas/@(lis.Id).png" />
+                </div>
+                <h3>@lis.Nombre</h3>
+            </a>
+        }
+
+
+    </aside>
+
+
+

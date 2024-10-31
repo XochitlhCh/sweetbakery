@@ -1,0 +1,755 @@
+﻿@font-face {
+    src: url(Fangtasia_0.ttf) format('truetype');
+    font-family: 'Fangtasia';
+}
+
+@font-face {
+    src: url(BebasNeue.otf) format('opentype');
+    font-family: 'Bebas Neue';
+}
+
+html {
+    background-image: url(imagenes/index/fondo.png);
+    font-family: Calibri;
+}
+
+body {
+    width: 95%;
+    min-height: 100px;
+    padding: 0;
+    border: 0;
+    margin: 10px auto;
+}
+
+header {
+    width: 100%;
+    min-height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+    header a img {
+        height: 150px;
+        margin: auto;
+        display: block;
+    }
+
+#logo {
+    height: 150px;
+    display: block;
+}
+
+.Menu {
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    margin: 5px auto;
+    list-style: none;
+    background-color: #11110f;
+}
+
+    .Menu li {
+        width: 20%;
+        height: 60px;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        float: left;
+    }
+
+        .Menu li a {
+            width: 100%;
+            height: 60px;
+            border-right: 1px solid #cb736f;
+            text-align: center;
+            line-height: 60px;
+            font-family: 'Bebas Neue';
+            font-size: 33px;
+            color: white;
+            display: block;
+            text-decoration: none;
+        }
+
+    .Menu ul {
+        float: none;
+        width: 100%;
+        padding: 0;
+        list-style: none;
+        position: relative;
+        top: 0;
+        background-color: #11110f;
+        display: none;
+        z-index: 1;
+        transition: opacity 0.5s;
+        -webkit-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+    }
+
+        .Menu ul li {
+            width: 100%;
+            float: none;
+            z-index: 1;
+        }
+
+            .Menu ul li a {
+                border: 0;
+            }
+
+
+
+    .Menu li:hover ul {
+        display: block;
+    }
+
+    .actual, .Menu li a:hover {
+        width: 100%;
+        background-color: #cb736f;
+        background-image: url(imagenes/activo.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: 20px;
+    }
+
+main {
+    width: 98.4%;
+    min-height: 200px;
+    padding: 10px;
+    margin: 0;
+    border: 0;
+    overflow: hidden;
+    background-color: white;
+}
+/*INDEX*/
+.imagenesIndex {
+    width: 695px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+    .imagenesIndex figure {
+        position: absolute;
+        top: 0;
+        left: 50px;
+        width: 335px;
+        margin: 0;
+        box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .imagenesIndex figcaption span {
+        position: absolute;
+        top: 40%;
+        margin-top: -30px;
+        right: 20px;
+        left: 20px;
+        overflow: hidden;
+        text-align: center;
+        background: rgba(87, 73, 81, 0.3);
+        line-height: 20px;
+        font-size: 18px;
+        opacity: 0;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-weight: 700;
+        padding: 20px;
+        color: #fff;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    }
+
+    .imagenesIndex > figure {
+        position: relative;
+        left: 0;
+    }
+
+    .imagenesIndex img {
+        display: block;
+        width: 100%;
+    }
+
+    .imagenesIndex input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 100%;
+        border: 0;
+        padding: 0;
+        opacity: 0;
+        z-index: 100;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+        .imagenesIndex input:checked {
+            width: 5px;
+            left: auto;
+            right: 0px;
+        }
+
+            .imagenesIndex input:checked ~ figure {
+                -webkit-transition: all 0.7s ease-in-out;
+                -moz-transition: all 0.7s ease-in-out;
+                -o-transition: all 0.7s ease-in-out;
+                -ms-transition: all 0.7s ease-in-out;
+                transition: all 0.7s ease-in-out;
+                left: 335px;
+            }
+
+    .imagenesIndex figcaption {
+        width: 100%;
+        height: 100%;
+        background: rgba(87, 73, 81, 0.1);
+        position: absolute;
+        top: 0px;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+    }
+
+    .imagenesIndex input:checked + figcaption, .imagenesIndex input:checked:hover + figcaption {
+        background: rgba(87, 73, 81, 0);
+    }
+
+        .imagenesIndex input:checked + figcaption span {
+            -webkit-transition: all 0.4s ease-in-out 0.5s;
+            -moz-transition: all 0.4s ease-in-out 0.5s;
+            -o-transition: all 0.4s ease-in-out 0.5s;
+            -ms-transition: all 0.4s ease-in-out 0.5s;
+            transition: all 0.4s ease-in-out 0.5s;
+            opacity: 1;
+            top: 50%;
+        }
+
+    .imagenesIndex #ultimo:checked + figcaption span {
+        -webkit-transition-delay: 0.3s;
+        -moz-transition-delay: 0.3s;
+        -o-transition-delay: 0.3s;
+        -ms-transition-delay: 0.3s;
+        transition-delay: 0.3s;
+    }
+
+    .imagenesIndex input:hover + figcaption {
+        background: rgba(87, 73, 81, 0.03);
+    }
+
+    .imagenesIndex input:checked ~ figure input {
+        z-index: 5;
+    }
+
+#enlaces {
+    width: 100%;
+    max-height: 400px;
+    margin: 50px 0 0 0;
+    background-color: red;
+}
+
+    #enlaces a {
+        display: block;
+        float: left;
+        width: 33.33%;
+        max-height: 400px;
+        text-decoration: none;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+#bodas {
+    background-image: url(imagenes/index/bodas.png);
+}
+
+#cumple {
+    background-image: url(imagenes/index/cumplea.png);
+}
+
+#graduaciones {
+    background-image: url(imagenes/index/graduacion.png);
+}
+
+#enlaces a h2 {
+    width: 426px;
+    height: 392px;
+    margin: 0;
+    text-align: center;
+    line-height: 392px;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    font-family: 'Bebas Neue';
+    font-weight: 100;
+    font-size: 55px;
+    opacity: 0;
+}
+
+    #enlaces a h2:hover {
+        opacity: 1;
+    }
+
+footer {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    background-color: #11110f;
+}
+
+    footer a {
+        width: 50px;
+        height: 100px;
+        margin: 5px;
+        border: 0;
+        padding: 0;
+        display: block;
+        float: left;
+    }
+
+    footer h3 {
+        height: 100px;
+        line-height: 100px;
+        display: block;
+        float: left;
+        color: white;
+        font-family: 'Bebas Neue';
+        font-weight: 100;
+        font-size: xx-large;
+        margin: 0 20px 0 10px;
+    }
+
+    footer img {
+        width: 50px;
+        height: 50px;
+        margin: 20px 0;
+        display: block;
+    }
+
+.productos {
+    width: 1000px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+    .productos a {
+        width: 199px;
+        height: 200px;
+        border-left: 1px solid #cb736f;
+        background-image: url(Imagenes/productos/cupcakes.png);
+        background-repeat: no-repeat;
+        background-size: 140px;
+        background-position: top center;
+        text-decoration: none;
+        display: block;
+        float: left;
+    }
+
+        .productos a:hover {
+            background-color: #11110f
+        }
+
+        .productos a:first-child {
+            border: 0;
+        }
+
+#aPasteles {
+    background-image: url(Imagenes/productos/pasteles.png);
+}
+
+#aCookies {
+    background-image: url(Imagenes/productos/cookies.png);
+}
+
+#aMacarons {
+    background-image: url(Imagenes/productos/macarons.png);
+}
+
+#aPies {
+    background-image: url(Imagenes/productos/pie.png);
+}
+
+.productos a h2, .contenedor h2, #receta h1, .principal h1, .TipoP h2, #TituloContacto, #Pedidos {
+    font-family: Fangtasia;
+    font-weight: lighter;
+    color: #cb736f;
+    text-align: center;
+
+  font-size: 100px;
+    margin: 10px 0 15px 0;
+
+}
+
+.contenedor, .TipoP {
+    overflow: hidden;
+}
+
+    .TipoP h2 {
+        font-size: 100px;
+        margin: 10px 0 15px 0;
+        text-align:center;
+    }
+
+.foto {
+    width: 233px;
+    height: 233px;
+    margin: 0 10px 10px 0;
+    float: left;
+    border: 5px solid #9fbeb1;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    -webkit-box-shadow: 1px 1px 2px #e6e6e6;
+    -moz-box-shadow: 1px 1px 2px #e6e6e6;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+    .foto:nth-child(5n+1) {
+        margin: 0 0 10px 0;
+    }
+
+    .foto .info {
+        width: 233px;
+        height: 233px;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        background-color: #9fbeb1;
+        -webkit-transform: translateX(-300px);
+        -moz-transform: translateX(-300px);
+        -o-transform: translateX(-300px);
+        -ms-transform: translateX(-300px);
+        transform: translateX(-300px);
+        opacity: 1;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .foto img {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+    }
+
+    .foto h5 {
+        color: black;
+        text-align: center;
+        position: relative;
+        font-size: 25px;
+        font-family: 'Bebas Neue';
+        background: rgba(0, 0, 0, 0.8);
+        margin: 20px 0 0 0;
+        line-height: 50px;
+        background: rgba(255, 255, 255, 0.5);
+        color: #000;
+        -webkit-box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
+        -moz-box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
+        box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
+    }
+
+    .foto p {
+        font-style: italic;
+        font-size: 12px;
+        position: relative;
+        color: black;
+        padding: 10px 20px 20px;
+        text-align: center;
+        opacity: 0;
+        color: #333;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+    }
+
+    .foto:hover .info {
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -o-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+
+    .foto:hover img {
+        -webkit-transform: translateX(300px);
+        -moz-transform: translateX(300px);
+        -o-transform: translateX(300px);
+        -ms-transform: translateX(300px);
+        transform: translateX(300px);
+    }
+
+    .foto:hover p {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+/*SECCION RECETAS*/
+.contenedor > div {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow:hidden;
+}
+
+.contenedor div div {
+    width: calc(30% - 10px);
+    height: 100%;
+    margin-right: 10px;
+    float: left;
+    text-align: center;
+}
+
+.contenedor img {
+    max-width:100%;
+    max-height:100%;
+    margin-left:auto;    
+}
+
+.contenedor div h2 {
+    width: 70%;
+    display: block;
+    float: left;
+    font-size: xx-large;
+    font-family: 'Bebas Neue';
+    margin: 0;
+}
+
+.contenedor div p, #receta p {
+    display: block;
+    float: left;
+    width: 70%;
+    font-size: x-large;
+}
+/*Info Receta*/
+#receta {
+    width: 80%;
+    min-height: 300px;
+    margin-right: 20px;
+    float: left;
+    overflow: hidden;
+}
+
+    #receta h1 {
+        width: 100%;
+        margin: 0;
+    }
+
+    #receta img {
+        width: 600px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    #receta p, .principal p {
+        width: 95%;
+        margin: 10px auto;
+        font-size: large;
+        font-style: italic;
+        text-align: justify;
+    }
+
+    #receta div {
+        width: 29%;
+        min-height: 200px;
+        float: left;
+        margin-right: 10px;
+    }
+
+        #receta div:last-child {
+            width: 69.5%;
+            margin: 0;
+        }
+
+        #receta div h3, aside h2 {
+            font-family: 'Bebas Neue';
+            font-size: x-large;
+            font-weight: lighter;
+        }
+
+    #receta ul li, #receta ol li {
+        font-size: medium;
+    }
+
+aside {
+    width: 16.6%;
+    min-height: 500px;
+    padding: 10px;
+    overflow: hidden;
+    float: left;
+    background-color: #9fbeb1;
+}
+
+    aside h2 {
+        text-align: center;
+        margin-top: 0;
+        display: block;
+    }
+
+    aside a {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        display: block;
+    }
+
+        aside a:last-child {
+            margin: 0;
+        }
+
+        aside a div {
+            width: 100%;
+            height: 120px;
+            float: left;
+        }
+
+        aside a h3 {
+            display: block;
+            color: white;
+            font-weight: bold;
+            margin: 0;
+            font-size: larger;
+            text-align: center;
+        }
+
+        aside a img {
+            max-height: 120px;
+            margin: 0 auto;
+            display: block;
+        }
+/*EVENTOS*/
+.contenedor ul {
+    width: 100%;
+    min-height: 200px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+    .contenedor ul li {
+        display: block;
+        float: left;
+        width: 19%;
+        height: 256px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+        .contenedor ul li img {
+            width: 85%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .contenedor ul li a {
+            text-decoration: none;
+        }
+
+        .contenedor ul li h3 {
+            width: 100%;
+            font-family: 'Bebas Neue';
+            font-size: xx-large;
+            color: #11110f;
+            font-weight: 100;
+            margin: 0;
+            display: block;
+            text-align: center;
+        }
+
+.principal h1 {
+    width: 100%;
+    margin: 0;
+    font-size: 70px;
+    font-family: 'Bebas Neue';
+}
+
+.principal div {
+    width: 95%;
+    height: 250px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.principal img {
+    width: 100%;
+}
+
+.eventos {
+    margin: 20px 0 0 0;
+}
+
+    .eventos ul li img {
+        width: 95%;
+    }
+
+    .eventos ul li {
+        width: 20%;
+    }
+/*CONTACTO*/
+.contacto {
+    margin: 0 0 20px 0;
+}
+
+    .contacto img {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .contacto p {
+        width: 1261px;
+        font-family: 'Bebas Neue';
+        font-size: 25px;
+        font-weight: lighter;
+        display: block;
+        text-align: center;
+    }
+
+#TituloContacto, #Pedidos {
+    width: 1261px;
+    margin: 0 0 10px 0;
+    font-size: 95px;
+}
+
+.formulario {
+    margin: 0;
+}
+
+.inputs {
+    width: 400px;
+    margin: 0 20px 10px 0;
+    display: block;
+    float: left;
+}
+
+    .inputs:nth-child(3n) {
+        margin: 0;
+    }
+
+form textarea {
+    width: 1250px;
+    display: block;
+    float: left;
+}
+
+form input[type="submit"] {
+    width: 140px;
+    height: 55px;
+    color: white;
+    background-color: #11110f;
+    margin: 10px 0 10px 0;
+    float: right;
+}
+
+f
